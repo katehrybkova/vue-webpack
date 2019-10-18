@@ -1,1 +1,1 @@
-enter "npm run dev" for for watching 
+enter "npm run dev" for watching 
