@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import List from './List.vue';
-import Pic from './Pic.vue';
+import BootstrapVue from "bootstrap-vue";
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './style/style.css'
 
-Vue.component("list", List)
-Vue.component("pic", Pic)
+Vue.use(BootstrapVue);
+
+export const eventBus = new Vue()
 
 new Vue({
   el: '#app',

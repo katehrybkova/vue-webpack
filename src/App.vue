@@ -1,54 +1,17 @@
 <template >
-  <div class="container">
-    <div class="tabs">
-      <div v-bind:class="[isListActive ? 'active' : '']" @click="isListActive = true">List</div>
-      <div v-bind:class="[isListActive ? '' : 'active']" @click="isListActive = false">Picture</div>
-    </div>
-    <div class="elements">
-      <div v-if="isListActive">
-        <list></list>
-      </div>
-      <div v-else>
-        <pic></pic>
-      </div>
-      <component v-bind:is="list"></component>
+  <div>
+    <div>
+      <my-header></my-header>
+      <statistic-grid  class="container pt-3"></statistic-grid>
     </div>
   </div>
 </template>
 
 <script>
+import MyHeader from "./components/Header";
+import StatisticGrid from "./components/StatisticGrid";
+
 export default {
-  data() {
-    return {
-      isListActive: true
-    };
-  }
+  components: { MyHeader, StatisticGrid }
 };
 </script>
-
-<style scoped>
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  border-bottom: 1px solid burlywood;
-}
-.tabs div {
-  width: 50%;
-  padding: 10px;
-  cursor: pointer;
-}
-.container {
-  text-align: center;
-  border: 1px solid burlywood;
-  width: 500px;
-  margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.active {
-  background-color: burlywood;
-}
-.elements {
-  padding: 10px 25px;
-}
-</style>
